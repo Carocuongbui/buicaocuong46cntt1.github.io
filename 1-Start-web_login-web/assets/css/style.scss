@@ -254,13 +254,20 @@ $background-left__main : #0e0f11 ;
 // footer
   .footer {
     background-color:$background-left__main ;
-    height: 700px;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+
     .img-footer {
       color: $white;
+      height: 300px;
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: center;
+      align-content: center;
+      gap: 32px;
+      .text__img-footer {
+        width: 100%;
+        text-align: center;
       h1 {
         margin-bottom: 6px;
         transition-property:  color;
@@ -279,14 +286,32 @@ $background-left__main : #0e0f11 ;
       p:hover {
         color: $aqua;
       }
+    }
     img {
-      width: 300px;
-      // height: 300px;
-  }  }
-    .video-footer {
+      width: 500px;
+      height: auto;
+      border-radius: 25px;
+      transition-property: box-shadow ;
+            transition-duration: 0.5s;
+            transition-timing-function: ease;
+    } 
+    img:hover {
+      box-shadow: 0 0 20px $aqua;
+    }
+     }
+    .video-footer{
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      gap: 32px;
       h1 {
         color: $white;
         text-align: center;
+        width: 100%;
         transition-property: color ;
             transition-duration: 0.5s;
             transition-timing-function: ease;
@@ -295,19 +320,17 @@ $background-left__main : #0e0f11 ;
         color: $aqua;
       }
       video {
-        margin-top: 16px;
-        width: 600px;
-        height: 50% vw;
-        border: 2px $white solid;
-        border-radius: 15px;
-        transition-property: box-shadow;
+        border-radius: 50px;
+        width: 70%;
+        height: auto;
+        transition-property: box-shadow ;
             transition-duration: 0.5s;
             transition-timing-function: ease;
       }
       video:hover {
         box-shadow: 0 0 20px $aqua;
       }
-    }
+    } 
   }
 
 //   animation
@@ -329,10 +352,11 @@ $background-left__main : #0e0f11 ;
     }
   }
   
-  @media (max-width: 1366px) { 
-    .left-main .title__left-main {
+  @media (max-width: 1500px) { 
+    .left-main .go-to-main-web, .left-main .title__left-main {
       margin-left: 10%;
     }
+    
   }
 
 
