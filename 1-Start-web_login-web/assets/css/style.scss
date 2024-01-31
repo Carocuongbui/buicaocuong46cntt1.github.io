@@ -478,7 +478,23 @@ $background-left__main : #0e0f11 ;
       grid-column-end: 3;
       grid-row-start: 2;
       grid-row-end: 3;
-      .box-login {
+      .box-register {
+        .box-resgister-top {
+          .title__box-resgister {
+            margin-left: 32px;
+            text-align: left;
+          }
+        }
+        .btn-resgister {
+          font-size: 12px;
+          padding: 10px 15px;
+        }
+        .btn-login-more {
+          padding: 5px 15px;
+          font-size: small;
+        }
+      }
+      .box-register, .box-login {
         font-size: small;
         height: 400px ;
         width: 60% ;
@@ -559,6 +575,10 @@ $background-left__main : #0e0f11 ;
         .btn-login-more {
           padding: 5px 15px;
           font-size: small;
+        }
+        .title__box-resgister {
+          margin-left: 32px;
+            text-align: left;
         }
       }
       .box-register, .box-login {

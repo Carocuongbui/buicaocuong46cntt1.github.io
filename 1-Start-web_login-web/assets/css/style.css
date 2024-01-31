@@ -448,24 +448,36 @@
     grid-row-start: 2;
     grid-row-end: 3;
   }
-  .main .right-main .box-login {
+  .main .right-main .box-register .box-resgister-top .title__box-resgister {
+    margin-left: 32px;
+    text-align: left;
+  }
+  .main .right-main .box-register .btn-resgister {
+    font-size: 12px;
+    padding: 10px 15px;
+  }
+  .main .right-main .box-register .btn-login-more {
+    padding: 5px 15px;
+    font-size: small;
+  }
+  .main .right-main .box-register, .main .right-main .box-login {
     font-size: small;
     height: 400px;
     width: 60%;
   }
-  .main .right-main .box-login .box-login-top .title__box-login {
+  .main .right-main .box-register .box-login-top .title__box-login, .main .right-main .box-login .box-login-top .title__box-login {
     margin-left: 32px;
     text-align: left;
   }
-  .main .right-main .box-login .btn-box {
+  .main .right-main .box-register .btn-box, .main .right-main .box-login .btn-box {
     margin-top: 20px;
     justify-content: left;
   }
-  .main .right-main .box-login .btn-resgister-more {
+  .main .right-main .box-register .btn-resgister-more, .main .right-main .box-login .btn-resgister-more {
     padding: 5px 15px;
     font-size: small;
   }
-  .main .right-main .box-login .btn-login {
+  .main .right-main .box-register .btn-login, .main .right-main .box-login .btn-login {
     font-size: 12px;
     padding: 10px 15px;
   }
@@ -521,6 +533,10 @@
   .main .right-main .box-register .btn-login-more {
     padding: 5px 15px;
     font-size: small;
+  }
+  .main .right-main .box-register .title__box-resgister {
+    margin-left: 32px;
+    text-align: left;
   }
   .main .right-main .box-register, .main .right-main .box-login {
     font-size: small;
