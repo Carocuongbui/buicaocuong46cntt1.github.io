@@ -197,6 +197,7 @@
   background: transparent;
   border: none;
   outline: none;
+  border-radius: 0;
   border-bottom: 2px solid white;
   height: 36px;
   width: 100%;
