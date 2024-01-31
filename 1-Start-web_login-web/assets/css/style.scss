@@ -4,7 +4,7 @@ $aqua : aqua;
 $background-left__main : #0e0f11 ;
 
 
-.no-support-device, .no-support-js {
+.no-support-js {
   height: 100vh;
   width: 100vw;
   color: $white;
@@ -15,7 +15,12 @@ $background-left__main : #0e0f11 ;
   text-align: center;
 }
 .no-support-device {
+  color: $white;
+  background-color: $black;
   display: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .mobile-none {
@@ -116,9 +121,11 @@ $background-left__main : #0e0f11 ;
         // margin: 6px 0px;
       }
       input {
+        border-style: none;
         background: transparent;
         border: none;
         outline: none;
+        border-radius: 0;
         border-bottom: 2px solid $white;
         // border-radius: 10px;
         height: 36px;
@@ -200,6 +207,7 @@ $background-left__main : #0e0f11 ;
               // margin: 6px 0px;
             }
             input {
+              border-style: none;
               background: transparent;
               border: none;
               outline: none;
