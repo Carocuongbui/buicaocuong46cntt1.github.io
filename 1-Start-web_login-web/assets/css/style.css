@@ -47,7 +47,7 @@
 
 .main {
   width: 100%;
-  height: 100vh;
+  height: 110vh;
   background-image: url(./img/background\ web.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -463,7 +463,7 @@
   }
   .main .right-main .box-register, .main .right-main .box-login {
     font-size: small;
-    height: 400px;
+    height: 95%;
     width: 60%;
   }
   .main .right-main .box-register .box-login-top .title__box-login, .main .right-main .box-login .box-login-top .title__box-login {
