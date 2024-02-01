@@ -387,6 +387,7 @@
     height: auto;
   }
   .footer h1 {
+    margin-bottom: 16px;
     width: 100%;
     text-align: center;
   }
