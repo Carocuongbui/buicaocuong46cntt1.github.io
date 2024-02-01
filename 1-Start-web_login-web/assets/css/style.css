@@ -47,7 +47,7 @@
 
 .main {
   width: 100%;
-  height: 110vh;
+  height: 800px;
   background-image: url(./img/background\ web.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -419,7 +419,7 @@
 @media (max-width: 1274px) and (min-width: 740px) {
   .main {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 200px 1fr;
+    grid-template-rows: 1fr 1fr;
   }
   .main .left-main {
     grid-column-start: 1;
@@ -495,7 +495,7 @@
   }
   .main {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 200px 1fr;
+    grid-template-rows: 1fr 1fr;
   }
   .main .left-main {
     grid-column-start: 1;
