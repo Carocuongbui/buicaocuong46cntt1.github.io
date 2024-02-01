@@ -585,7 +585,7 @@
     display: block !important;
   }
 }
-@media (max-width: 278px) {
+@media (max-width: 300px) {
   .no-support-device {
     display: flex;
     position: fixed;
