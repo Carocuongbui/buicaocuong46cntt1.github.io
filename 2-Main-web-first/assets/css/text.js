@@ -42,18 +42,20 @@ window.addEventListener('resize', function() {
     }
   });
 
-  function callback(mutationsList, observer) {
-    for(let mutation of mutationsList) {
-        if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
-            let displayStyle = window.getComputedStyle(mutation.target).display;
-            if (displayStyle === 'none') {
-                document.querySelector('.menu').style.display = 'inline-block';
-            }
-        }
-    }
-} 
+ 
+// Create an observer instance linked to the callback function
+let observer = new MutationObserver((mutations) => {
+  for(let mutation of mutations) {
+      let displayValue = window.getComputedStyle(mutation.target).display;
+      if (displayValue === 'none') {
+        document.querySelector('.menu').style.display = 'inline-block';
+      } 
+      else if (displayValue === 'block') {
+        document.querySelector('.menu').style.display = 'none';
+      }
+  }
+});
 
+// Start observing the target node for configured mutations
 let targetNode = document.querySelector('.left__main');
-let observerOptions = { attributes: true };
-let observer = new MutationObserver(callback);
-observer.observe(targetNode, observerOptions);
+observer.observe(targetNode, { attributes: true, attributeFilter: ['style'] });
