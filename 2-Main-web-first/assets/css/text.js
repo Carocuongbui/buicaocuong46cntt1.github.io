@@ -104,3 +104,41 @@ function handleWindowResize() {
 window.addEventListener('resize', handleWindowResize);
 window.addEventListener('load', handleWindowResize);
 
+const obs = new MutationObserver(function(mutationsList) {
+  for (let mutation of mutationsList) {
+    if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+      handleStyleChange();
+    }
+  }
+});
+
+let node = document.querySelector('.left__main');
+
+obs.observe(node, { attributes: true, attributeFilter: ['style'] });
+
+document.addEventListener('DOMContentLoaded', function() {
+  var faq = document.querySelector('.faq');
+  var rightMain = document.querySelector('.right__main');
+  var faqRightMain = document.querySelector('.faq-right-main');
+
+  faq.addEventListener('click', function() {
+    rightMain.style.display = 'none';
+    faqRightMain.style.display = 'block';
+  });
+});
+
+document.getElementById('main-page').addEventListener('click', function() {
+  document.querySelector('.right__main').style.display = 'block';
+  document.querySelector('.faq-right-main').style.display = 'none';
+});
+
+function handleStyleChange() {
+  if (window.innerWidth <= 1024) {
+    let leftMain = document.querySelector('.left__main');
+    let currentDisplay = leftMain.style.display;
+
+    if (currentDisplay !== 'none') {
+      leftMain.style.display = 'none';
+    }
+  }
+}
