@@ -26,7 +26,11 @@ $background-left__main : #0e0f11 ;
 .mobile-none {
   display: none;
 }
-
+html {
+  scrollbar-width:  thin; /* Firefox */
+  scrollbar-width: none; /* Chrome, Safari, Opera */
+  scrollbar-color: $black ;
+}
 * {
     padding: 0;
     margin: 0;

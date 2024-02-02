@@ -43,7 +43,6 @@ window.addEventListener('resize', function() {
   });
 
  
-// Create an observer instance linked to the callback function
 let observer = new MutationObserver((mutations) => {
   for(let mutation of mutations) {
       let displayValue = window.getComputedStyle(mutation.target).display;
@@ -56,6 +55,52 @@ let observer = new MutationObserver((mutations) => {
   }
 });
 
-// Start observing the target node for configured mutations
 let targetNode = document.querySelector('.left__main');
 observer.observe(targetNode, { attributes: true, attributeFilter: ['style'] });
+
+document.addEventListener('DOMContentLoaded', function() {
+  var faq = document.querySelector('.faq');
+  var rightMain = document.querySelector('.right__main');
+  var faqRightMain = document.querySelector('.faq-right-main');
+
+  faq.addEventListener('click', function() {
+    rightMain.style.display = 'none';
+    faqRightMain.style.display = 'block';
+  });
+});
+
+document.getElementById('main-page').addEventListener('click', function() {
+  document.querySelector('.right__main').style.display = 'block';
+  document.querySelector('.faq-right-main').style.display = 'none';
+});
+
+
+// document.querySelector('.right__main').addEventListener('click', function() {
+//   this.style.display = 'none';
+//   document.querySelector('.faq-right-main').style.display = 'block';
+// });
+
+// document.querySelector('.faq-right-main').addEventListener('click', function() {
+//   this.style.display = 'none';
+//   document.querySelector('.right__main').style.display = 'block';
+// });
+
+function handleWindowResize() {
+  if (window.innerWidth <= 1024) {
+    const mainPage = document.getElementById('main-page');
+    const faq = document.querySelector('.faq');
+    const leftMain = document.querySelector('.left__main');
+
+    mainPage.addEventListener('click', function() {
+      leftMain.style.display = 'none';
+    });
+
+    faq.addEventListener('click', function() {
+      leftMain.style.display = 'none';
+    });
+  } 
+}
+
+window.addEventListener('resize', handleWindowResize);
+window.addEventListener('load', handleWindowResize);
+

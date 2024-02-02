@@ -7,6 +7,15 @@
   list-style: none;
 }
 
+html {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-width: none ; /* Chrome, Safari, Opera */
+  scrollbar-color: black;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
 ::-moz-selection {
   background: transparent;
   color: aqua;
@@ -62,6 +71,7 @@
   height: 100vh;
   position: relative;
   border-radius: 15px;
+  overflow-y: scroll;
 }
 .main .left__main .top--left__main {
   background-color: #18191b;
@@ -80,7 +90,7 @@
   width: 100px;
 }
 .main .left__main .top--left__main .name--top--left__main {
-  color: #EDEEF0;
+  color: #edeef0;
   width: 150px;
   transition-property: color;
   transition-duration: 0.3s;
@@ -125,6 +135,7 @@
   height: 100%;
   overflow-y: scroll;
   position: relative;
+  overflow-x: hidden;
 }
 .main .right__main .first-content {
   width: 100%;
@@ -137,6 +148,8 @@
   transition-property: color;
   transition-duration: 0.7s;
   transition-timing-function: ease;
+  margin: 0px 12px;
+  width: 100%;
 }
 .main .right__main .first-content .title__first-content:hover {
   color: aqua;
@@ -292,6 +305,88 @@
   font-size: 16px;
 }
 
+.faq-right-main {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  height: 100%;
+  overflow-y: scroll;
+  position: relative;
+  display: none;
+}
+.faq-right-main .title-faq-right-main {
+  text-align: center;
+  color: white;
+  margin-top: 64px;
+}
+.faq-right-main .faq-box-contact {
+  margin-top: 12px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.faq-right-main .faq-box-contact form {
+  width: 100%;
+}
+
+.faq-input-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+.faq-input-contact label, .faq-input-contact p {
+  color: white;
+  width: 100%;
+}
+.faq-input-contact input,
+.faq-input-contact textarea {
+  width: 100%;
+  border-style: none;
+  background: transparent;
+  border: none;
+  outline: none;
+  border-radius: 0;
+  border-bottom: 2px solid white;
+  height: 36px;
+  color: white;
+}
+.faq-input-contact textarea {
+  width: 100%;
+  border-style: none;
+  background: transparent;
+  border-bottom: 2px solid white;
+  resize: none;
+}
+
+.faq-btn-contact {
+  margin-top: 32px;
+}
+.faq-btn-contact .faq-submit {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  transition-property: color background-color;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+.faq-btn-contact .faq-submit:hover {
+  color: black;
+  background-color: white;
+}
+
 .loading {
   position: fixed;
   top: 0;
@@ -426,6 +521,7 @@
     grid-column-start: 1;
     grid-column-end: 2;
     animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    overflow-y: scroll;
   }
   .title__first-content {
     width: 75%;
