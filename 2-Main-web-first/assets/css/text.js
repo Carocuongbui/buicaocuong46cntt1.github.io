@@ -104,17 +104,9 @@ function handleWindowResize() {
 window.addEventListener('resize', handleWindowResize);
 window.addEventListener('load', handleWindowResize);
 
-const obs = new MutationObserver(function(mutationsList) {
-  for (let mutation of mutationsList) {
-    if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
-      handleStyleChange();
-    }
-  }
-});
-
 let node = document.querySelector('.left__main');
 
-obs.observe(node, { attributes: true, attributeFilter: ['style'] });
+node.addEventListener('DOMAttrModified', handleStyleChange);
 
 document.addEventListener('DOMContentLoaded', function() {
   var faq = document.querySelector('.faq');
@@ -132,8 +124,8 @@ document.getElementById('main-page').addEventListener('click', function() {
   document.querySelector('.faq-right-main').style.display = 'none';
 });
 
-function handleStyleChange() {
-  if (window.innerWidth <= 1024) {
+function handleStyleChange(e) {
+  if (e.attrName === 'style') {
     let leftMain = document.querySelector('.left__main');
     let currentDisplay = leftMain.style.display;
 
