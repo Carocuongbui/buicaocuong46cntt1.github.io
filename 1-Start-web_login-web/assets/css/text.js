@@ -43,3 +43,10 @@ document.addEventListener('DOMContentLoaded', function() {
       document.querySelector('.loading').style.display = "none"; 
   }, 1000); 
 }
+
+const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+if (isSafari) {
+  alert('Phiên bản trình duyệt của bạn không tương thích, xin vui lòng sử dụng Chrome, Bing hoặc trình duyệt khác');
+  document.querySelector('.main').style.opacity = '0';
+}

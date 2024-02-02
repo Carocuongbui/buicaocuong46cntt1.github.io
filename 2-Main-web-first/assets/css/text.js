@@ -104,33 +104,9 @@ function handleWindowResize() {
 window.addEventListener('resize', handleWindowResize);
 window.addEventListener('load', handleWindowResize);
 
-let node = document.querySelector('.left__main');
+const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
-node.addEventListener('DOMAttrModified', handleStyleChange);
-
-document.addEventListener('DOMContentLoaded', function() {
-  var faq = document.querySelector('.faq');
-  var rightMain = document.querySelector('.right__main');
-  var faqRightMain = document.querySelector('.faq-right-main');
-
-  faq.addEventListener('click', function() {
-    rightMain.style.display = 'none';
-    faqRightMain.style.display = 'block';
-  });
-});
-
-document.getElementById('main-page').addEventListener('click', function() {
-  document.querySelector('.right__main').style.display = 'block';
-  document.querySelector('.faq-right-main').style.display = 'none';
-});
-
-function handleStyleChange(e) {
-  if (e.attrName === 'style') {
-    let leftMain = document.querySelector('.left__main');
-    let currentDisplay = leftMain.style.display;
-
-    if (currentDisplay !== 'none') {
-      leftMain.style.display = 'none';
-    }
-  }
+if (isSafari) {
+  alert('Phiên bản trình duyệt của bạn không tương thích, xin vui lòng sử dụng Chrome, Bing hoặc trình duyệt khác');
+  document.querySelector('.main').style.opacity = '0';
 }
